@@ -1,0 +1,34 @@
+<app-nav></app-nav>
+
+<div class="page-content">
+    <div class="form-v5-content">
+        <form class="form-detail"  #f="ngForm" (ngSubmit)="add(f)">
+            <div class="form-row">
+                <img src="../../assets/images/111.jpg" alt="" width="400px" style="padding-left: 180px;">
+            </div>
+            <h2>Formulaire de depot de projet</h2>
+          
+
+            <div class="form-row">
+                <div class="mb-3">
+                    <label for="formFile" class="form-label">Rapport</label>
+                    <input class="form-control" #rapport="ngModel" name="rapport" type="file"
+                        id="formFile" ngModel>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="mb-3">
+                    <label for="formFile" class="form-label">Vidéo</label>
+                    <input class="form-control" #video="ngModel" name="video" type="file"
+                        id="formFile" ngModel>
+                </div>
+            </div>
+            
+
+            <div class="form-row-last">
+                <input type="submit" name="register" class="register" value="Ajouter" style="background-color: #4835d4;">
+            </div>
+        </form>
+    </div>
+</div>
+<app-footer></app-footer>

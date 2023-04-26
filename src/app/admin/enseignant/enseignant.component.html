@@ -1,0 +1,156 @@
+
+<app-header></app-header>
+  
+  
+  <!--Main layout-->
+  <main style="margin-top: 58px; margin-left: 30px; margin-right: 20px;">
+    <br><br>
+    
+    <h1 class="h3 mb-2 text-gray-800">Tables</h1>
+    <div class="card-header py-3 container-fluid">
+        <div class="row">
+          <div class="col-md-10" >
+              <h6 class="m-0 font-weight-bold text-primary" > Enseignants </h6>
+          </div>
+          <div class="col-md-2">
+             <a class="btn  btn-md btn-rounded btn-success"  href="/admin/addenseignant" ><i class="fas fa-plus-circle"></i>  Ajouter</a>
+         </div>
+        </div>
+      </div>
+
+      <div class="card-body">
+        <div class="table-responsive" >
+        <table class="table align-middle mb-0 bg-white">
+            <thead class="bg-light">
+              <tr>
+                <th>ID</th>
+                <th>Nom et Prénom</th>
+               
+                <th>Numéro de téléphone</th>
+                <th>Spécialité</th>
+                <th>Les technologies utilisées</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let mydata of dataArray; index as i">
+              <tr>
+                <td><p class="fw-normal mb-1">{{mydata?.id}}</p></td>
+               
+                <td>
+                  <div class="d-flex align-items-center">
+                    <img
+                        src="../../../assets/images/222.jpg"
+                        alt=""
+                        style="width: 45px; height: 45px"
+                        class="rounded-circle"
+                        />
+                    <div class="ms-3">
+                      <p class="fw-bold mb-1">{{mydata?.nom}} {{mydata?.prenom}}</p>
+                      <p class="text-muted mb-0">{{mydata?.mail}}</p>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <p class="fw-normal mb-1">{{mydata?.tel}}</p>
+                 
+                </td>
+                <td>
+                    <p class="fw-normal mb-1">{{mydata?.specialite}}</p>
+                </td>
+                <td>
+                  <p class="fw-normal mb-1"  *ngFor="let tech of mydata?.tech">{{tech?.nom}} </p>
+              </td>
+                <td>
+                  <button class="btn btn-link btn-sm btn-rounded" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="getdata(mydata.id,mydata.nom,mydata.prenom,mydata.mail,mydata.tel,mydata.mdp,mydata.specialite)">
+                    <i class="material-icons">border_color</i>&nbsp; 
+                </button>
+                  <a  class="btn btn-link btn-sm btn-rounded" onclick="alert('voulez-vous vraiment le supprimer?')" (click)="delete(mydata.id)">
+                  <i class="material-icons" style="color: red;">delete_forever</i>
+                  </a>
+                </td>
+              </tr>
+             
+            </tbody>
+          </table> 
+   </div>
+   </div>
+     <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modifier les informations de l'Enseignant</h5>
+      
+      </div>
+      <div class="modal-body">
+        <!--form start here-->
+        <form #f="ngForm" (ngSubmit)="update(f)" >
+          <div classs="container p-5" *ngIf="ms==1">
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+              <strong>Enseignant Bien Modifiée</strong> 
+          
+            </div>
+            </div>
+            <div classs="container p-5" *ngIf="ms==0">
+              <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Enseignant Existe déja</strong> Voulez-vous vérifier les informations saisies .
+               
+              </div>
+              </div>
+
+              <div class="form-group" style="margin-top: 20px;">
+                <input class="form-control" type="text"  [(ngModel)]="dataens.nom" required name="nom" #nom="ngModel" ngModel>
+            </div>
+            <div class="form-group" style="margin-top: 20px;">
+                <input class="form-control" type="text"  [(ngModel)]="dataens.prenom" required name="prenom" #prenom="ngModel" ngModel>
+            </div>
+            <div class="form-group" style="margin-top: 20px;">
+                <input class="form-control" type="text"  [(ngModel)]="dataens.mail"  required name="mail" #mail="ngModel" ngModel>
+            </div>
+            <div class="form-group" style="margin-top: 20px;">
+                <input  class="form-control" type="number"  [(ngModel)]="dataens.tel"
+                 required name="tel" #tel="ngModel" ngModel>
+            </div>
+            <div class="form-group" style="margin-top: 20px;">
+                <input class="form-control" type="text" [(ngModel)]="dataens.specialite" required name="specialite" #specialite="ngModel" ngModel>
+            </div>
+            <div class="form-group" style="margin-top: 20px;">
+                <input class="form-control" type="password" [(ngModel)]="dataens.mdp" required name="mdp" #mdp="ngModel" ngModel>
+            </div>
+            <!-- <div class="form-group">
+              <label style="margin-bottom: 20px;"><strong> Les technologies utilisées : </strong></label>
+              <br>
+              <select required class="form-select"  [(ngModel)]="dataens.tech[0].id" aria-label="Default select example" name="tech1" #tech1="ngModel" ngModel>
+                <option >{{dataens.tech[0].nom}}</option>
+                  <option *ngFor="let mydata1 of dataArray1" value={{mydata1.id}}>{{mydata1.nom}}</option>
+                 
+                </select>
+                <br>
+                <select required class="form-select" [(ngModel)]="dataens.tech[1].id" aria-label="Default select example" name="tech2" #tech2="ngModel" ngModel>
+
+                  <option >{{dataens.tech[1].nom}}</option>
+                  <option *ngFor="let mydata1 of dataArray1" value={{mydata1.id}}>{{mydata1.nom}}</option>
+                </select>
+                <br>
+                <select required class="form-select" [(ngModel)]="dataens.tech[2].id" aria-label="Default select example" name="tech3" #tech3="ngModel" ngModel>
+
+                  <option >{{dataens.tech[2].nom}}</option>
+                  <option *ngFor="let mydata1 of dataArray1" value={{mydata1.id}}>{{mydata1.nom}}</option>
+                </select>
+          </div>  -->
+
+
+          <div class=" d-flex flex-column text-center px-5 mt-3 mb-3"> <small class="agree-text">En cliquant sur
+                  Modifier, les informations de l'Enseignant changent</small> </div> 
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                    <button type="submit" [disabled]="f.invalid"class="btn btn-primary confirm-button">Enregistrer</button>
+                  </div>
+              </form>
+      </div>
+      
+    </div>
+  </div>
+</div>
+  </main>
+  <!--Main layout-->

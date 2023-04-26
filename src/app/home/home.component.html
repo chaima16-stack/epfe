@@ -1,0 +1,95 @@
+<app-nav></app-nav>
+<br><br>
+<header class="masthead">
+    <div class="container px-5">
+        <div class="row  align-items-center">
+            <div class="col-lg-12">
+                
+                    
+                
+                    <div >
+                        <img class="app-badge img1" src="../../assets/images/img1.jpg" alt="..." >
+                    
+                    </div>
+                    
+              
+            </div>
+          
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-lg-12 butt1" >
+                <a class="btn btn-primary  px-3 mb-2 mb-lg-0"  href="/accueil/#start" style="background-color:#3e3fd1 ">
+                    <span class="d-flex align-items-center">
+                        <i class="material-icons">keyboard_arrow_right</i>&nbsp;
+    
+                        <span class="small" >Commencer</span>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+<br><br><br>
+<div class="container" id="start" >
+    <div classs="container p-5" *ngIf="m==3">
+        <br>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+          <strong>Binome Bien Ajouté!!</strong> Passer à l'étape suivante. 
+         
+        </div>
+      </div>
+    <div classs="container p-5" *ngIf="m==2">
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+          <strong>Projet Bien déposé </strong> Enicarthage vous souhaite la réussite .
+        
+        </div>
+        </div>
+        <div classs="container p-5" *ngIf="m==1">
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+              <strong>Projet Bien crée </strong> Passer à l'étape suivante.
+            
+            </div>
+            </div>
+    <div class="row">
+       <div class="col-lg-4">
+        <div class="card" style="width: 18rem;">
+            <img  class="card-img-top" src="../../assets/images/img22.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title"><strong>1. </strong><i class="material-icons">devices</i>&nbsp;Créer un projet</h5>
+              <p class="card-text">Il faut d'abord ajouter les informations nécessaires sur le projet de fin d'étude à réaliser et scanner tous les documents demandés.</p>
+        <br>
+              <div class="butto" *ngIf="!m"> <a routerLink="/projet" class="btn btn-primary bt" > Créer un projet</a><br></div>
+              <div class="butto" *ngIf="m==1 || m==2 || m==3 "> <a routerLink="/projet" class="btn btn-primary bt disabled-link"   > Créer un projet</a></div><br>
+            </div>
+         
+       
+          </div>
+       </div>
+       <div class="col-lg-4">
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="../../assets/images/img2.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title"><strong>2. </strong><i class="material-icons">person_add</i>&nbsp;Ajouter le binome </h5>
+              <p class="card-text">Aprés avoir créer le projet, si vous allez travailler le projet en binome, il faut ajouter ce dernier au projet.                 </p>
+             <br><br><br>
+             <div class="butto"> <a routerLink="/binome" class="btn btn-primary bt">Ajouter Binome</a></div><br>
+            </div>
+          </div>
+       </div>
+       <div class="col-lg-4">
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="../../assets/images/img3.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title"><strong>3. </strong><i class="material-icons">touch_app</i>Contacter un encadrant</h5>
+              <p class="card-text">Selon les informations saisies sur le projet, le système affichera des encadrants, et chaque binome doit choisir un encadrant pour l'envoyer une demande d'encadrement.</p>
+              <div class="butto1">    <a routerLink="/encadrant" class="btn btn-primary bt">Contacter un encadrant</a></div><br>
+            </div>
+          </div>
+       </div>
+    </div>
+</div>
+
+<br><br><br><br>
+
+<app-footer></app-footer>

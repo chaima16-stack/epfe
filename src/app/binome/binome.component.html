@@ -1,0 +1,28 @@
+<app-nav></app-nav>
+
+<div class="page-content">
+    <div class="form-v5-content">
+        <form class="form-detail" #f="ngForm" (ngSubmit)="add(f)">
+            <div class="form-row">
+                <img src="../../assets/images/img8.jpg" alt="" width="400px" style="padding-left: 180px;">
+            </div>
+            <h2>Formulaire d'ajout du binome</h2>
+          
+
+            <div class="form-row">
+                <label for="spec">Liste des étudiants</label>
+                    <select #etd="ngModel" name="etd" class="form-select"  ngModel >
+                        <option *ngFor="let mydata of dataArray; index as i" value={{mydata?.id}} >{{mydata?.prenom}} {{mydata?.nom}} --{{mydata?.formation.nom}}-{{mydata?.grp.nom}}-- </option>
+                        
+                    </select>
+             
+            </div>
+        
+
+            <div class="form-row-last">
+                <input type="submit" name="register" class="register" value="Ajouter" style="background-color: #4835d4;">
+            </div>
+        </form>
+    </div>
+</div>
+<app-footer></app-footer>

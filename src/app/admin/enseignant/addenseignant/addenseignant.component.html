@@ -1,0 +1,71 @@
+<app-header></app-header>
+
+
+<main style="margin-top: 58px; margin-left:60px; margin-right: 20px;">
+   <!-- Button trigger modal -->
+
+<div class="container mt-5 mb-5 d-flex justify-content-center"  style="margin-top: 58px; margin-left: 100px; margin-right: 20px;">
+    <div class="card px-1 py-4">
+        <div class="card-body">
+            <h6 class="information mb-3">Ajouter un nouveau Enseignant :</h6>
+            <form #f="ngForm" (ngSubmit)="add(f)">
+               
+                        
+                        <div class="form-group">
+                            <input class="form-control" type="text"  placeholder="Nom" required name="nom" #nom="ngModel" ngModel>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="text"  placeholder="Prenom" required name="prenom" #prenom="ngModel" ngModel>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="text"  placeholder="Adresse Mail" required name="mail" #mail="ngModel" ngModel>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="number"  placeholder="Numéro de téléphone"
+                             required name="tel" #tel="ngModel" ngModel>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="text"  placeholder="Specialite" required name="specialite" #specialite="ngModel" ngModel>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="password"  placeholder="Donnez lui un mot de passe" required name="mdp" #mdp="ngModel" ngModel>
+                        </div>
+                       <br>
+
+                     <div class="form-group">
+                            <label style="margin-bottom: 20px;"><strong> Les technologies utilisées : </strong></label>
+                            <br>
+                            <select required class="form-select" aria-label="Default select example" name="tech1" #tech1="ngModel" ngModel>
+            
+                                <option *ngFor="let mydata of dataArray" value={{mydata.id}}>{{mydata.nom}}</option>
+                               
+                              </select>
+                              <br>
+                              <select required class="form-select" aria-label="Default select example" name="tech2" #tech2="ngModel" ngModel>
+            
+                                <option *ngFor="let mydata of dataArray" value={{mydata.id}}>{{mydata.nom}}</option>
+                               
+                              </select>
+                              <br>
+                              <select required class="form-select" aria-label="Default select example" name="tech3" #tech3="ngModel" ngModel>
+            
+                                <option *ngFor="let mydata of dataArray" value={{mydata.id}}>{{mydata.nom}}</option>
+                               
+                              </select>
+                        </div> 
+                       
+                       
+                      
+              
+
+
+
+                <div class=" d-flex flex-column text-center px-5 mt-3 mb-3"> <small class="agree-text">En cliquant sur
+                        ajouter, l'Enseignant s'ajoute automatiquement</small> </div> <button
+                    class="btn btn-primary btn-block confirm-button" style="width: 100%; background-color: #3e3fd1;" >Ajouter</button>
+                    </form>
+        </div>
+    </div>
+</div>
+
+</main>

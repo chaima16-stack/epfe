@@ -1,0 +1,85 @@
+<app-nav></app-nav>
+<div class="page-content">
+    <div class="form-v5-content">
+        <form class="form-detail"  #fff="ngForm" (ngSubmit)="register(fff)">
+            <div class="form-row">
+                <img src="../../assets/images/img4.jpg" alt="" width="400px" style="padding-left: 180px;">
+            </div>
+            <h2>Formulaire de Création de Compte</h2>
+            <div class="form-row">
+                <label for="name">Nom</label>
+                <input type="text" name="nom" #nom="ngModel" id="name" class="input-text" placeholder="Nom" required ngModel>
+               
+            </div>
+            <div class="form-row">
+                <label for="prenom">Prénom</label>
+                <input type="text" name="prenom" #prenom="ngModel" id="prenom" class="input-text" placeholder="Prénom" required ngModel>
+              
+            </div>
+            <div class="form-row">
+                <label for="email">Adresse Email</label>
+                <input type="text" name="mail" id="mail" #mail="ngModel" class="input-text" placeholder="Adresse Email" required ngModel
+                    pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" ngModel>
+                
+            </div>
+            <div class="form-row">
+                <label for="prenom">Numéro de télephone</label>
+                <input type="Number" name="tel" #tel="ngModel" id="tel" class="input-text" placeholder="Mot de passe" required ngModel>
+              
+            </div>
+            <div class="form-row">
+                <label for="password">Mot de passe</label>
+                <input type="password" name="mdp" #mdp="ngModel" id="password" class="input-text" placeholder="Mot de passe"
+                    required ngModel>
+                    <label class="form-label" for="form3Example4c">
+                                   
+                        <ul>
+                            <li> de 8 à 15 caractères</li>
+                            <li> au moins une lettre minuscule</li>
+                            <li> au moins une lettre majuscule</li>
+                            <li> au moins un chiffre</li>
+                            <li>au moins un de ces caractères spéciaux: $ @ % * + - _ !</li>
+                        </ul>
+                    </label>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+
+                    <label for="spec">Spécialité</label>
+                    <select id="spec" class="form-select" name="formation" #formation="ngModel"   ngModel>
+
+                        <option *ngFor="let mydata of dataf" value={{mydata.id}}>{{mydata.nom}}</option>
+                        
+                    </select>
+
+
+                </div>
+                <div class="col-lg-6">
+                    <label for="grp">Groupe</label>
+                    <select id="grp" class="form-select" name="grp" #grp="ngModel" ngModel>
+                        <option *ngFor="let mydata of dataArray" value={{mydata.id}}>{{mydata.nom}}</option>
+                       
+                    </select>
+                </div>
+            </div>
+            <br>
+            <div class="form-row">
+                <div class="mb-3">
+                    <label for="1" class="form-label">Relevé de notes de 1ére année</label>
+                    <input class="form-control" type="file" id="1" name="releve1ere" #releve1ere="ngModel" ngModel>
+                  </div>
+            </div>
+            <div class="form-row">
+                <div class="mb-3">
+                    <label for="2" class="form-label">Relevé de notes de 2éme année</label>
+                    <input class="form-control" type="file" id="2" name="releve2eme" #releve2eme="ngModel" ngModel>
+                  </div>
+            </div>
+
+            <div class="form-row-last">
+                <input type="submit" name="register" class="register" value="Créer" style="background-color: #4835d4;">
+            </div>
+        </form>
+    </div>
+</div>
+<app-footer></app-footer>

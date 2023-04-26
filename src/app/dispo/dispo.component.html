@@ -1,0 +1,48 @@
+<app-nav></app-nav>
+<div class="page-content">
+    <div class="form-v5-content">
+        <form class="form-detail" action="#" method="post">
+            <div class="form-row">
+                <img src="../../assets/images/img6.jpg" alt="" width="400px" style="padding-left: 180px;">
+            </div>
+            <h2>Diposer votre projet</h2>
+            <div class="form-row">
+                <label for="name">Nom du projet</label>
+                <input type="text" name="name" id="name" class="input-text" placeholder="Nom" required>
+               
+            </div>
+            <div class="form-row">
+                <label for="prenom">Nom du l'encadrant académique</label>
+                <input type="text" name="prenom" id="prenom" class="input-text" placeholder="Prénom" required>
+              
+            </div>
+            <div class="form-row">
+                <label for="email">Adresse Email</label>
+                <input type="text" name="email" id="email" class="input-text" placeholder="Adresse Email" required
+                    pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}">
+                
+            </div>
+
+           
+           
+            <br>
+            <div class="form-row">
+                <div class="mb-3">
+                    <label for="1" class="form-label">Diposer votre rapport sous format pdf</label>
+                    <input class="form-control" type="file" id="1">
+                  </div>
+            </div>
+            <div class="form-row">
+                <div class="mb-3">
+                    <label for="2" class="form-label">Vidéo de présentation de votre application ou votre projet</label>
+                    <input class="form-control" type="file" id="2">
+                  </div>
+            </div>
+
+            <div class="form-row-last">
+                <input type="submit" name="register" class="register" value="Diposer" style="background-color: #4835d4;">
+            </div>
+        </form>
+    </div>
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,67 @@
+
+<!--Main Navigation-->
+<header>
+  <!-- Sidebar -->
+  <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse " style="background-color: #3e3fd1;">
+    <div class="position-sticky">
+      <h2 style="color: white; margin-left: 20px;">Admin</h2>
+      <div class="list-group list-group-flush mx-3 mt-4">
+        <a routerLink="/admin/etudiant" class="list-group-item list-group-item-action py-2 ripple  " 
+          aria-current="true"  style="background-color: #3e3fd1;color: white; margin-bottom: 20px;">
+          <i class="material-icons">people</i> &nbsp;<span>Etudiants</span>
+        </a>
+        
+        <a routerLink="/admin/enseignants" class="list-group-item list-group-item-action py-2 ripple " style="background-color: #3e3fd1; color: white;  margin-bottom: 10px;">
+          <i class="material-icons">supervisor_account</i> &nbsp;<span>Enseignants</span>
+        </a>
+        <a routerLink="/admin/projet" class="list-group-item list-group-item-action py-2 ripple" style="background-color: #3e3fd1; color: white;  margin-bottom: 10px;"><i
+            class="material-icons">school</i> &nbsp;<span>Projets</span></a>
+        <a routerLink="/admin/societe" class="list-group-item list-group-item-action py-2 ripple" style="background-color: #3e3fd1;color: white;  margin-bottom: 10px;"><i
+            class="material-icons">home</i> &nbsp;<span>Sociétés</span></a>
+        <a routerLink="/admin/technologie" class="list-group-item list-group-item-action py-2 ripple" style="background-color: #3e3fd1;color: white;  margin-bottom: 10px;">
+          <i class="material-icons">format_size</i> &nbsp;<span>Technologies</span>
+        </a>
+        <a routerLink="/admin/mc" class="list-group-item list-group-item-action py-2 ripple" style="background-color: #3e3fd1;color: white;  margin-bottom: 10px;"><i
+            class="material-icons">laptop</i> &nbsp;<span>MC</span></a>
+        <a routerLink="/admin/bd" class="list-group-item list-group-item-action py-2 ripple" style="background-color: #3e3fd1;color: white;  margin-bottom: 10px;"><i
+            class="material-icons">save</i> &nbsp;<span>Base de données</span></a>
+        <a routerLink="/admin/groupe" class="list-group-item list-group-item-action py-2 ripple" style="background-color: #3e3fd1;color: white;  margin-bottom: 10px;"><i
+            class="material-icons">group_add</i> &nbsp;<span>Groupes</span></a>
+        <a routerLink="/admin/formation" class="list-group-item list-group-item-action py-2 ripple" style="background-color: #3e3fd1;color: white;  margin-bottom: 10px;"><i
+            class="material-icons">school</i> &nbsp;<span>Spécialités</span></a>
+            <a (click)="logout()" routerLink="/admin/logout" class="list-group-item list-group-item-action py-2 ripple" style="background-color: #3e3fd1;color: white; "><i
+              class="material-icons">keyboard_tab</i> &nbsp;<span>Déconnecter</span></a>
+      </div>
+    </div>
+  </nav>
+  <!-- Sidebar -->
+
+  <!-- Navbar -->
+  <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light  fixed-top" >
+    <!-- Container wrapper -->
+    <div class="container-fluid">
+      <!-- Toggle button -->
+      <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#sidebarMenu"
+        aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Brand -->
+     
+
+      <!-- Right links -->
+      <ul class="navbar-nav ms-auto d-flex flex-row" >
+        <!-- Example single danger button -->
+        <div class="btn-group">
+          <a class="navbar-brand" href="#">
+            <img src="../../../assets/images/logo.png" height="55" alt="MDB Logo" loading="lazy" />
+          </a>
+         
+
+        </div>
+      </ul>
+    </div>
+    <!-- Container wrapper -->
+  </nav>
+  <!-- Navbar -->
+</header>

@@ -1,0 +1,24 @@
+.img1{
+    padding-left: 70px;
+    width: 1200px;
+}
+.butt1{
+    padding-left: 50%;
+  
+}
+.bt{
+    background-color: #3e3fd1;
+    
+}
+.butto{
+    padding-left: 20%;
+}
+.butto1{
+    padding-left: 15%;
+}
+.disabled-link {
+    color: gray; /* Modifie la couleur du texte pour le griser */
+    cursor: not-allowed; /* Change le curseur de la souris pour indiquer que le lien est désactivé */
+    pointer-events: none; /* Empêche l'utilisateur de cliquer sur le lien */
+    text-decoration: none; /* Supprime le soulignement du lien */
+  }

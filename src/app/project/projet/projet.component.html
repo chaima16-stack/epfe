@@ -1,0 +1,189 @@
+<app-nav></app-nav>
+<div class="page-content">
+    <div class="form-v10-content">
+        <form class="form-detail" #f="ngForm" (ngSubmit)="add(f)" id="myform">
+            <div class="form-left">
+                <h2>Société</h2>
+                <div class="form-row">
+                    <input type="text" name="nom" #nom="ngModel" id="societe_name" class="input-text"
+                        placeholder="Nom de la société" required ngModel>
+                </div>
+                <label style="margin-left: 67px;">Adresse de la Société</label>
+                <div class="form-group">
+
+                    <br>
+                    <div class="form-row form-row-1">
+                        <input type="text" name="num" #num="ngModel" id="num" class="input-text" placeholder="N°"
+                            required ngModel>
+                    </div>
+                    <div class="form-row form-row-4">
+                        <input type="text" name="rue" id="rue" #rue="ngModel" class="input-text" placeholder="Rue" required ngModel>
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <div class="form-row form-row-3">
+                        <input type="text" name="ville" id="ville" #ville="ngModel" class="input-text"
+                            placeholder="Ville" required ngModel>
+                    </div>
+                    <div class="form-row form-row-4">
+                        <input type="text" name="codep" id="codep" #codep="ngModel" class="input-text"
+                            placeholder="Code Postal" required ngModel>
+                    </div>
+
+
+                </div>
+                <div class="form-row">
+                    <input type="text" name="encadrant_pro" #encadrant_pro="ngModel" class="company" id="encadrant"
+                        placeholder="Nom de l'encadrant professionnel" required ngModel>
+                </div>
+                <div class="form-row">
+                    <input type="email" #mail="ngModel" name="mail" class="company" id="adr"
+                        placeholder="Adresse mail l'encadrant professionnel ou Société"
+                        pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" required ngModel>
+                </div>
+                <div class="form-row">
+                    <input type="tel" #tel="ngModel" name="tel" class="company" id="tel"
+                        placeholder="Numéro de téléphone de l'encadrant professionnel ou Société" required ngModel>
+                </div>
+
+
+                <label style="margin-left: 67px;" class="form-label">Stage énuméré</label>
+                <div class="form-row">
+                    <select name="enu" #enu="ngModel" ngModel>
+
+                        <option value="oui">oui</option>
+                        <option value="non">non</option>
+
+                    </select>
+                    <span class="select-btn">
+                        <i class="material-icons">keyboard_arrow_down
+
+                        </i>
+                    </span>
+                </div>
+                <div class="form-row">
+                    <div class="mb-3">
+                        <label for="formFile" class="form-label">Cahier de Charge</label>
+                        <input class="form-control" #cahier_charge="ngModel" name="cahier_charge" type="file"
+                            id="formFile" ngModel>
+                    </div>
+                </div>
+            </div>
+            <div class="form-right">
+                <h2>Projet De Fin D'étude</h2>
+                <div class="form-row ">
+                    <div class="mb-3">
+                    <input type="text" name="nom_proj" #nom_proj="ngModel" class="additional" id="nom_proj"
+                        placeholder="Nom du projet" required ngModel>
+                        </div>
+             
+            </div>
+                <div class="form-group">
+
+                    <br>
+                  
+                    <div class="form-row form-row-1">
+                        <input type="text" name="annee" #annee="ngModel" id="rue" class="input-text"
+                            placeholder="Année universitaire" required ngModel>
+                    </div>
+
+                    <div class="form-row form-row-1">
+                        <input type="text" name="duree" #duree="ngModel" id="rue" class="input-text" placeholder="Durée"
+                            required ngModel>
+                    </div>
+                </div>
+
+
+           
+
+            <label class="form-label" style="margin-left: 67px; color: white;">Technologies à utilisées</label>
+            <div class="form-row">
+
+                <select name="tech" #tech="ngModel" ngModel>
+
+
+
+
+
+                    <option *ngFor="let mydata of dataArray" value={{mydata.id}}>{{mydata?.nom}}</option>
+
+                </select>
+                <span class="select-btn">
+                    <i class="material-icons">keyboard_arrow_down</i>
+                </span>
+            </div>
+            <label class="form-label" style="margin-left: 67px; color: white;">Plus de Technologies à utilisées</label>
+            <div class="form-row">
+                <select name="tech1" #tech1="ngModel" ngModel>
+
+                    <option *ngFor="let mydata of dataArray" value={{mydata.id}}>{{mydata?.nom}}</option>
+
+                </select>
+                <span class="select-btn">
+                    <i class="material-icons">keyboard_arrow_down</i>
+                </span>
+            </div>
+            <label class="form-label" style="margin-left: 67px; color: white;">Les langages de programmation</label>
+            <div class="form-row">
+                <select name="tech2" #tech2="ngModel" ngModel>
+
+
+
+                    <option *ngFor="let mydata of dataArray" value={{mydata.id}}>{{mydata?.nom}}</option>
+
+
+                </select>
+                <span class="select-btn">
+                    <i class="material-icons">keyboard_arrow_down</i>
+                </span>
+            </div>
+            <label class="form-label" style="margin-left: 67px; color: white;">Base de données</label>
+            <div class="form-row">
+                <select name="bd" #bd="ngModel" ngModel>
+
+
+                    <option *ngFor="let mydata of databd" value={{mydata.id}}>{{mydata?.nom}}</option>
+
+
+
+                </select>
+                <span class="select-btn">
+                    <i class="material-icons">keyboard_arrow_down</i>
+                </span>
+            </div>
+            <label class="form-label" style="margin-left: 67px; color: white;">Méthodes de gestion de projet</label>
+            <div class="form-row">
+                <select name="mth" #mth="ngModel" ngModel>
+
+                    <option *ngFor="let mydata of datamth" value={{mydata.id}}>{{mydata?.nom}}</option>
+
+                </select>
+                <span class="select-btn">
+                    <i class="material-icons">keyboard_arrow_down</i>
+                </span>
+            </div>
+            <label class="form-label" style="margin-left: 67px; color: white;">En Binome</label>
+            <div class="form-row">
+                <select name="binome" #binome="ngModel" ngModel>
+
+                    <option value="oui">oui</option>
+                    <option value="non">non</option>
+
+                </select>
+                <span class="select-btn">
+                    <i class="material-icons">keyboard_arrow_down
+
+                    </i>
+                </span>
+            </div>
+            <div class="form-row-last">
+                <input type="submit" name="register" class="register" value="Enregister">
+            </div>
+        
+       </div>
+    </form>
+    
+</div>
+</div>
+<app-footer></app-footer>

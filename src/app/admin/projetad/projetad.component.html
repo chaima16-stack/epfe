@@ -1,0 +1,110 @@
+
+<app-header></app-header>
+  
+  
+  <!--Main layout-->
+  <main style="margin-top: 58px; margin-left: 30px; margin-right: 20px;">
+    <br><br>
+    
+    <h1 class="h3 mb-2 text-gray-800">Tables</h1>
+    <div class="card-header py-3 container-fluid">
+        <div class="row">
+          <div class="col-md-10" >
+              <h6 class="m-0 font-weight-bold text-primary" > Projets </h6>
+          </div>
+         
+        </div>
+      </div>
+
+      <div class="card-body">
+        <div class="table-responsive" >
+        <table class="table align-middle mb-0 bg-white">
+            <thead class="bg-light">
+              <tr>
+                <th>ID</th>
+                <th>Nom du Projet</th>
+               
+                <th>Année</th>
+                <th>Durée</th>
+                <th>Cahier de charge</th>
+                <th>Encadrant professionel</th>
+             
+                <th>Rapport</th>
+                <th>Vidéo</th>
+                <th>Téchnologies utilisées</th>
+                <th>Nom de la société</th>
+                <th>Base de données</th>
+                <th>Méthode de conception</th>
+                <th>En binome</th>
+                <th>Énumération</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let mydata of dataArray; index as i">
+              <tr>
+                <td><p class="fw-normal mb-1">{{mydata?.id}}</p></td>
+               
+                <td>
+                  <div class="d-flex align-items-center">
+                  
+                    <div class="ms-3">
+                      <p class="fw-bold mb-1">{{mydata?.nom}} </p>
+            
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <p class="fw-normal mb-1">{{mydata?.annee}}</p>
+                 
+                </td>
+                <td>
+                    <p class="fw-normal mb-1">{{mydata?.duree}}</p>
+                </td>
+                <td>
+                    <p class="fw-normal mb-1">{{mydata?.cahier_charge}}</p>
+                </td>
+                <td>
+                    <p class="fw-normal mb-1">{{mydata?.encadrant_pro}}</p>
+                </td>
+              
+               <td>
+                    <p class="fw-normal mb-1">{{mydata?.rapport}}</p>
+                </td> 
+                <td>
+                    <p class="fw-normal mb-1">{{mydata?.video}}</p>
+                </td> 
+                <td>
+
+                    <p class="fw-normal mb-1"*ngFor="let t of mydata?.tech">{{t?.nom}} </p>
+                </td> 
+                <td>
+                    <p class="fw-normal mb-1"><a routerLink="/admin/societe">{{mydata?.soc.nom}}</a></p>
+                </td> 
+                <td>
+                    <p class="fw-normal mb-1">{{mydata?.bd.nom}}</p>
+                </td> 
+                <td>
+                    <p class="fw-normal mb-1">{{mydata?.mth.nom}}</p>
+                </td> 
+                <td>
+                    <p class="fw-normal mb-1">{{mydata?.binome}}</p>
+                </td> 
+                <td>
+                    <p class="fw-normal mb-1">{{mydata?.enu}}</p>
+                </td> 
+            
+                <td>
+                
+                  <a  class="btn btn-link btn-sm btn-rounded" onclick="alert('voulez-vous vraiment le supprimer?')" (click)="delete(mydata.id)">
+                  <i class="material-icons" style="color: red;">delete_forever</i>
+                  </a>
+                </td>
+              </tr>
+             
+            </tbody>
+          </table> 
+   </div>
+   </div>
+
+  </main>
+  <!--Main layout-->

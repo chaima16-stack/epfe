@@ -1,0 +1,88 @@
+
+<app-header></app-header>
+  
+  
+  <!--Main layout-->
+  <main style="margin-top: 58px; margin-left: 30px; margin-right: 20px;">
+    <br><br>
+    
+    <h1 class="h3 mb-2 text-gray-800">Tables</h1>
+    <div class="card-header py-3 container-fluid">
+        <div class="row">
+          <div class="col-md-10" >
+              <h6 class="m-0 font-weight-bold text-primary" > Étudiants </h6>
+          </div>
+         
+        </div>
+      </div>
+
+      <div class="card-body">
+        <div class="table-responsive" >
+        <table class="table align-middle mb-0 bg-white">
+            <thead class="bg-light">
+              <tr>
+                <th>ID</th>
+                <th>Nom et Prénom</th>
+               
+                <th>Numéro de téléphone</th>
+                <th>Relevé 1ére année</th>
+                <th>Relevé 2éme année</th>
+                <th>Formation</th>
+                <th>Groupe</th>
+                <th>Projet</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let mydata of dataArray; index as i">
+              <tr>
+                <td><p class="fw-normal mb-1">{{mydata?.id}}</p></td>
+               
+                <td>
+                  <div class="d-flex align-items-center">
+                    <img
+                        src="../../../assets/images/222.jpg"
+                        alt=""
+                        style="width: 45px; height: 45px"
+                        class="rounded-circle"
+                        />
+                    <div class="ms-3">
+                      <p class="fw-bold mb-1">{{mydata?.nom}} {{mydata?.prenom}}</p>
+                      <p class="text-muted mb-0">{{mydata?.mail}}</p>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <p class="fw-normal mb-1">{{mydata?.tel}}</p>
+                 
+                </td>
+                <td>
+                    <p class="fw-normal mb-1">{{mydata?.releve1ere}}</p>
+                </td>
+                <td>
+                    <p class="fw-normal mb-1">{{mydata?.releve2eme}}</p>
+                </td>
+                <td>
+                    <p class="fw-normal mb-1">{{mydata?.formation.nom}}</p>
+                </td>
+                <td>
+                    <p class="fw-normal mb-1">{{mydata?.grp.nom}}</p>
+                </td>
+        <td>
+                    <p class="fw-normal mb-1"><a routerLink="/admin/projet">{{mydata?.proj.nom}}</a></p>
+                </td> 
+            
+                <td>
+                
+                  <a  class="btn btn-link btn-sm btn-rounded" onclick="alert('voulez-vous vraiment le supprimer?')" (click)="delete(mydata.id)">
+                  <i class="material-icons" style="color: red;">delete_forever</i>
+                  </a>
+                </td>
+              </tr>
+             
+            </tbody>
+          </table> 
+   </div>
+   </div>
+
+  </main>
+  <!--Main layout-->
